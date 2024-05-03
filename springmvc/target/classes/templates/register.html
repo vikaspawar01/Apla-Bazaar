@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head th:include="components :: bootstrapcdn">
+	<meta charset="UTF-8" />
+	<title>register page</title>
+</head>
+<style>
+	body{
+		background-color: lightskyblue;
+	}
+</style>
+<body>
+	<div th:replace="components :: navbar"></div>
+	<br>
+	<h1 align="center"><b>Registration</b></h1>
+	<div class="container">
+		<form method="post" th:object="${obj}">
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputName" th:field="*{name}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="exampleInputCity" th:field="*{city}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail" class="form-label">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail" th:field="*{email}">
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword" th:field="*{password}">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+	<div th:replace="components :: jscdn"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head th:include="components :: bootstrapcdn">
+	<meta charset="UTF-8" />
+	<title>home page</title>
+</head>
+<style>
+	body{
+		background-color: lightcoral;
+	}
+</style>
+<body>
+	<div th:replace="components :: navbar"></div>
+	<h1> welcome to home page</h1>
+	<h2><a href="add">Register</a></h2>
+	<h2><a href="list">List</a></h2>
+	
+	<div th:replace="components :: jscdn"></div>
+</body>
+</html>

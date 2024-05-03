@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head th:include="components :: bootstrapcdn">
+    <meta charset="UTF-8" />
+    <title>List page</title>
+</head>
+<style>
+    body{
+        background-color: lightgreen;
+    }
+</style>
+<body>
+    <div th:replace="components :: navbar"></div>
+    <h1>Welcome to User Details List</h1>
+        
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                     <th scope="col" colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td scope="row" th:text="${user.getId()}"></td>
+                    <td th:text="${user.getName()}"></td>
+                    <td th:text="${user.getCity()}"></td>
+                    <td th:text="${user.getEmail()}"></td>
+                    <td th:text="${user.getPassword()}"></td>
+                    <td><a th:href="@{delete/{id}(id=${user.getId()})}">Delete</a></td>
+                     <td><a th:href="@{edit/{id}(id=${user.getId()})}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="components :: jscdn"></div>
+</body>
+</html>
